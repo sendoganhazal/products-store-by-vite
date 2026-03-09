@@ -1,10 +1,10 @@
-import { Button, Box, Text } from "@chakra-ui/react";
+import { Button, Container, Text } from "@chakra-ui/react";
 
 const Home = () => (
-  <Box p={4}>
+  <Container>
     <Text fontSize="xl">Hello Chakra 👋</Text>
     <Button colorScheme="teal">Click me</Button>
-  </Box>
+  </Container>
 );
 
 
