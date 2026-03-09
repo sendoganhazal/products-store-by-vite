@@ -1,8 +1,11 @@
 import React from 'react'
-import { Link } from 'react-router'
+import { Button } from '@chakra-ui/react'
+import { IoCartOutline } from "react-icons/io5";
 
 export const CartButton = () => {
   return (
-    <Link to={"/cart"}>CartButton</Link>
+    <Button colorPalette="teal" variant="solid">
+      <IoCartOutline /> Cart
+    </Button>
   )
 }

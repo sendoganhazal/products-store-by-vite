@@ -1,6 +1,9 @@
-import { Flex, Container, Box } from '@chakra-ui/react'
+import { Flex, Container, Image } from '@chakra-ui/react'
 import LoginMenu from '../atoms/LoginMenu'
-import Searchbox from '../atoms/Searchbox'
+import { CartButton } from '../atoms/CartButton'
+import ReactLogo from "../../assets/react.svg";
+import ViteLogo from "../../assets/vite.svg"
+import { Link } from 'react-router';
 
 
 const HeaderNav = () => {
@@ -8,16 +11,16 @@ const HeaderNav = () => {
         <nav>
             <Container>
                 <Flex gap={"4"} align={"center"} justify={"space-between"}>
-                    <Box>Logo</Box>
-                    <Box flexGrow={"0.5"}>
-                        <Searchbox/>
-                    </Box>
-                    <Box>
-                        <LoginMenu/>
-                    </Box>
-                    <Box>
-                        Sepet
-                    </Box>
+                    <Flex gap={"2"} align={"center"} >
+                        <Image alt="Products Store" src={ReactLogo} style={{ display: "block", width: "30px", height: "30px" }} />
+                        <Image alt="Products Store" src={ViteLogo} style={{ display: "block", width: "30px", height: "30px" }} />
+                        <Link to={"/"}>Products Store</Link>
+                    </Flex>
+                    <Flex gap={"2"} align={"center"} justify={"flex-end"}>
+                        <LoginMenu />
+                        <CartButton />
+                    </Flex>
+
                 </Flex>
             </Container>
         </nav>
