@@ -5,7 +5,7 @@ const LoginMenu = () => {
     return (
         <Menu.Root>
             <Menu.Trigger asChild>
-                <Button variant="outline">
+                <Button variant="outline" colorPalette={"teal"}>
                     Login or Sign up
                 </Button>
             </Menu.Trigger>

@@ -2,6 +2,7 @@ import { Flex, Container, Box } from '@chakra-ui/react'
 import LoginMenu from '../atoms/LoginMenu'
 import Searchbox from '../atoms/Searchbox'
 
+
 const HeaderNav = () => {
     return (
         <nav>
