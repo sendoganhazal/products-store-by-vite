@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { Card, Image, Text, RatingGroup } from "@chakra-ui/react"
+import { Card, Image, Text, RatingGroup, Button } from "@chakra-ui/react"
 import type { ProductType } from "../../type/types"
 interface ProductProps {
   product: ProductType
@@ -19,15 +19,19 @@ const ProductCard = ({ product }: ProductProps) => {
           </Card.Description>
         )}
         <RatingGroup.Root readOnly count={5} value={product.rating} colorPalette={"yellow"} size="sm">
-           <RatingGroup.Label textStyle={"md"} fontWeight={"medium"} color={"gray.600"}>{product.rating}</RatingGroup.Label>
+          <RatingGroup.Label textStyle={"md"} fontWeight={"medium"} color={"gray.600"}>{product.rating}</RatingGroup.Label>
           <RatingGroup.HiddenInput />
           <RatingGroup.Control />
         </RatingGroup.Root>
-        <Text textStyle="2xl" fontWeight="medium" letterSpacing="tight" mt="2" color={"teal.500"}>
+        <Text textStyle="2xl" fontWeight="medium" letterSpacing="tight" mt="2" color={"purple.500"}>
           {product.price} $
         </Text>
-
+       
       </Card.Body>
+       <Card.Footer gap={2} justifyContent="flex-end">
+          <Button variant="solid" colorPalette={"teal"}>Add to Cart</Button>
+
+        </Card.Footer>
     </Card.Root>
   )
 }

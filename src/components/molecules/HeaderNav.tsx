@@ -12,8 +12,8 @@ const HeaderNav = () => {
             <Container>
                 <Flex gap={"4"} align={"center"} justify={"space-between"}>
                     <Flex gap={"2"} align={"center"} >
-                        <Image alt="Products Store" src={ReactLogo} style={{ display: "block", width: "30px", height: "30px" }} />
-                        <Image alt="Products Store" src={ViteLogo} style={{ display: "block", width: "30px", height: "30px" }} />
+                        <Image alt="Products Store" src={ReactLogo} style={{ display: "block", height: "30px" }} />
+                        <Image alt="Products Store" src={ViteLogo} style={{ display: "block",  height: "30px" }} />
                         <Link to={"/"}>Products Store</Link>
                     </Flex>
                     <Flex gap={"2"} align={"center"} justify={"flex-end"}>

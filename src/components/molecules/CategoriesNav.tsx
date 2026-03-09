@@ -23,7 +23,7 @@ function CategoriesNav() {
                     <Box>
                         <Menu.Root>
                             <Menu.Trigger asChild>
-                                <Button variant="outline">
+                                <Button variant="outline" colorPalette={'purple'}>
                                     Other Categories
                                 </Button>
                             </Menu.Trigger>

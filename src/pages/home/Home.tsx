@@ -1,9 +1,9 @@
-import { Button, Container, Text } from "@chakra-ui/react";
+import { Container, Image} from "@chakra-ui/react";
+import StayTuned from "../../assets/stay_tuned.jpg"
 
 const Home = () => (
   <Container>
-    <Text fontSize="xl">Hello Chakra 👋</Text>
-    <Button colorScheme="teal">Click me</Button>
+    <Image src={StayTuned} alt="Stay Tuned"/>
   </Container>
 );
 
