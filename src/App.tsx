@@ -1,17 +1,20 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/home/Home";
 import Layout from "./Layout";
+import { CategoryProvider } from "./context/CategoryContext";
+import CategoryProductsPage from "./pages/products/[slug]/page";
+
 function App() {
-
-
   return (
-    <Routes>
-      <Route element={<Layout />}>
-        <Route path="/" element={<Home />} />
-      </Route>
-
-    </Routes>
-  )
+    <CategoryProvider>
+      <Routes>
+        <Route element={<Layout />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/products/:slug" element={<CategoryProductsPage/>}/>
+        </Route>
+      </Routes>
+    </CategoryProvider>
+  ) 
 }
 
 export default App
