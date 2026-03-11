@@ -1,5 +1,5 @@
 import { Flex, Container, Image,Drawer } from '@chakra-ui/react'
-import LoginMenu from '../atoms/LoginMenu'
+// import LoginMenu from '../atoms/LoginMenu'
 import { CartButton } from '../atoms/CartButton'
 import ReactLogo from "../../assets/react.svg";
 import ViteLogo from "../../assets/vite.svg"
@@ -24,7 +24,7 @@ const HeaderNav = () => {
                         <Link to={"/"}>Products Store</Link>
                     </Flex>
                     <Flex gap={"2"} align={"center"} justify={"flex-end"}>
-                        <LoginMenu />
+                        {/* <LoginMenu /> */}
                        <Drawer.Root size={"xl"}>
                          <CartButton totalItems={totalItems} />
                         <DrawerPortal/>
