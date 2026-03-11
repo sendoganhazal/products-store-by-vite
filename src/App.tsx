@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/home/Home";
 import Layout from "./Layout";
-import { CategoryProvider } from "./context/CategoryContext";
+import { CategoryProvider } from "./lib/context/CategoryContext";
 import CategoryProductsPage from "./pages/products/[slug]/page";
 
 function App() {

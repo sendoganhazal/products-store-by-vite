@@ -1,11 +1,23 @@
 import React from 'react'
-import { Button } from '@chakra-ui/react'
+import { Button, Badge, Drawer } from '@chakra-ui/react'
 import { IoCartOutline } from "react-icons/io5";
 
-export const CartButton = () => {
+interface BadgeProps {
+  totalItems: number;
+}
+
+export const CartButton = ({ totalItems }: BadgeProps) => {
+
   return (
-    <Button colorPalette="teal" variant="solid">
-      <IoCartOutline /> Cart
-    </Button>
+    <Drawer.Trigger asChild>
+      <Button colorPalette="teal" variant="solid">
+        <IoCartOutline /> Cart
+        {
+          totalItems > 0 && <Badge colorPalette="pink">{totalItems}</Badge>
+        }
+
+      </Button>
+    </Drawer.Trigger>
+
   )
 }

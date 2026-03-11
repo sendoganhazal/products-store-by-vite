@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { useParams } from "react-router";
 import { useEffect, useState } from "react";
-import type { ProductType } from "../../type/types";
+import type { ProductType } from "../../lib/type/types";
 import { Container,Grid } from "@chakra-ui/react"
 import ProductGridItem from "../molecules/ProductGridItem";
 

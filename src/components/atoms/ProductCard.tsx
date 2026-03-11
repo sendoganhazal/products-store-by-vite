@@ -1,12 +1,14 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { Card, Image, Text, RatingGroup, Button } from "@chakra-ui/react"
-import type { ProductType } from "../../type/types"
+import type { ProductType } from "../../lib/type/types"
+import { useCart } from "../../lib/hooks/useCart"
 interface ProductProps {
   product: ProductType
 }
 
 
 const ProductCard = ({ product }: ProductProps) => {
+  const { addToCart } = useCart();
 
   return (
     <Card.Root>
@@ -26,12 +28,12 @@ const ProductCard = ({ product }: ProductProps) => {
         <Text textStyle="2xl" fontWeight="medium" letterSpacing="tight" mt="2" color={"purple.500"}>
           {product.price} $
         </Text>
-       
-      </Card.Body>
-       <Card.Footer gap={2} justifyContent="flex-end">
-          <Button variant="solid" colorPalette={"teal"}>Add to Cart</Button>
 
-        </Card.Footer>
+      </Card.Body>
+      <Card.Footer gap={2} justifyContent="flex-end">
+        <Button variant="solid" colorPalette={"teal"} onClick={() => addToCart(product)}>Add to Cart</Button>
+
+      </Card.Footer>
     </Card.Root>
   )
 }
