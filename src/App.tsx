@@ -3,6 +3,7 @@ import Home from "./pages/home/Home";
 import Layout from "./Layout";
 import { CategoryProvider } from "./lib/context/CategoryContext";
 import CategoryProductsPage from "./pages/products/[slug]/page";
+import ProductDetailPage from "./pages/product/[id]/page";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
           <Route path="/products/:slug" element={<CategoryProductsPage/>}/>
+          <Route path="/product/:id" element={<ProductDetailPage/>}/>
         </Route>
       </Routes>
     </CategoryProvider>
