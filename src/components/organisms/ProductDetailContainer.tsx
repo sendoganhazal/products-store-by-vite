@@ -1,10 +1,12 @@
-import { Container, Grid, GridItem } from "@chakra-ui/react"
+import { Container, Grid, GridItem,Button } from "@chakra-ui/react"
 import { useEffect, useState } from "react"
 import { useParams } from 'react-router-dom';
 import PageHeader from "../molecules/PageHeader";
 import type { ProductType } from "../../lib/type/types";
+import { useCart } from "../../lib/hooks/useCart"
 import ProductDescription from "../molecules/ProductDescription";
 import ProductOverview from "../molecules/ProductOverview";
+import ProductImages from "../molecules/ProductImages";
 
 const ProductDetailContainer = () => {
     const { id } = useParams();
@@ -29,16 +31,25 @@ const ProductDetailContainer = () => {
         },
         reviews: product?.reviews
     };
-
+    const { addToCart } = useCart();
     return (
         <Container marginTop={"1.5rem"}>
             <Grid templateColumns={"repeat(12,1fr)"} gap={5}>
                 <GridItem colSpan={9}>
                     <PageHeader title={product?.title} brand={product?.brand} />
-                    <p>Ürün Görselleri Carousel Images</p>
+                    <ProductImages product_images={product?.images}/>
                     <ProductDescription productDescription={product_description} />
                 </GridItem>
                 <GridItem colSpan={3}>
+                     <Button
+                        variant="solid"
+                        colorPalette={"teal"}
+                        onClick={() => product && addToCart(product)}
+                        disabled={!product}
+                     >
+                        Add to Cart
+                     </Button>
+
                     <ProductOverview sku={product?.sku} stock={product?.stock}     minimumOrderQuantity={product?.minimumOrderQuantity} price={product?.price} discountPercentage={product?.discountPercentage} availabilityStatus={product?.availabilityStatus}/>
                 </GridItem>
             </Grid>
