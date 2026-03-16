@@ -17,7 +17,6 @@ interface ProductDescriptionTypes {
         brand: string | undefined;
         category: string | undefined;
         returnPolicy: string | undefined;
-        minimumOrderQuantity: number | undefined;
         weight: number | undefined;
         dimensions: {
             width: number;
@@ -26,7 +25,6 @@ interface ProductDescriptionTypes {
         } | undefined;
         warrantyInformation: string | undefined;
         shippingInformation: string | undefined;
-        availabilityStatus: string | undefined;
     };
     reviews: Reviews[] | undefined;
 }

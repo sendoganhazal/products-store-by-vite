@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import PageHeader from "../molecules/PageHeader";
 import type { ProductType } from "../../lib/type/types";
 import ProductDescription from "../molecules/ProductDescription";
+import ProductOverview from "../molecules/ProductOverview";
 
 const ProductDetailContainer = () => {
     const { id } = useParams();
@@ -19,28 +20,26 @@ const ProductDetailContainer = () => {
         specs: {
             brand: product?.brand,
             category: product?.category,
-            returnPolicy: product?.returnPolicy,
-            minimumOrderQuantity: product?.minimumOrderQuantity,
+            returnPolicy: product?.returnPolicy, 
             weight: product?.weight,
             dimensions: product?.dimensions,
             warrantyInformation: product?.warrantyInformation,
             shippingInformation: product?.shippingInformation,
-            availabilityStatus: product?.availabilityStatus
+            
         },
         reviews: product?.reviews
-    }
+    };
+
     return (
-        <Container>
-            <Grid templateColumns={"repeat(12,1fr)"}>
+        <Container marginTop={"1.5rem"}>
+            <Grid templateColumns={"repeat(12,1fr)"} gap={5}>
                 <GridItem colSpan={9}>
                     <PageHeader title={product?.title} brand={product?.brand} />
                     <p>Ürün Görselleri Carousel Images</p>
                     <ProductDescription productDescription={product_description} />
                 </GridItem>
                 <GridItem colSpan={3}>
-                    <p>Fiyat</p>
-                    <p>SKU</p>
-                    <p>Stok adedi</p>
+                    <ProductOverview sku={product?.sku} stock={product?.stock}     minimumOrderQuantity={product?.minimumOrderQuantity} price={product?.price} discountPercentage={product?.discountPercentage} availabilityStatus={product?.availabilityStatus}/>
                 </GridItem>
             </Grid>
 
