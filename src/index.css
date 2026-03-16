@@ -1,53 +1,14 @@
-/* 1. Daha tutarlı box modeli */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+
+.description-section {
+  margin-top: 1.875rem;
 }
 
-/* 2. Varsayılan marginleri kaldır */
-* {
-  margin: 0;
+.description-section .css-11e8ur2,
+.description-section .css-1v2o4tv {
+  height: 100%;
 }
 
-/* 3. Body için temel ayarlar */
-body {
-  min-height: 100vh;
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-}
-
-/* 4. Medya elemanlarını taşırma */
-img,
-picture,
-video,
-canvas,
-svg {
-  display: block;
-  max-width: 100%;
-}
-
-/* 5. Form elemanları font miras alsın */
-input,
-button,
-textarea,
-select {
-  font: inherit;
-}
-
-/* 6. Metin taşmasını önle */
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  overflow-wrap: break-word;
-}
-
-/* 7. Root stacking context*/
-#root,
-#__next {
-  isolation: isolate;
+.description-section div[data-part="content"] {
+  height: 500px;
+  overflow: auto;
 }

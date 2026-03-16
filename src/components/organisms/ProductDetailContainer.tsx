@@ -1,8 +1,9 @@
-import { Container, Grid,GridItem } from "@chakra-ui/react"
+import { Container, Grid, GridItem } from "@chakra-ui/react"
 import { useEffect, useState } from "react"
 import { useParams } from 'react-router-dom';
 import PageHeader from "../molecules/PageHeader";
 import type { ProductType } from "../../lib/type/types";
+import ProductDescription from "../molecules/ProductDescription";
 
 const ProductDetailContainer = () => {
     const { id } = useParams();
@@ -13,19 +14,28 @@ const ProductDetailContainer = () => {
             .then(data => setProduct(data));
     }, []);
 
-    console.log("product", product)
+    const product_description = {
+        description: product?.description,
+        specs: {
+            brand: product?.brand,
+            category: product?.category,
+            returnPolicy: product?.returnPolicy,
+            minimumOrderQuantity: product?.minimumOrderQuantity,
+            weight: product?.weight,
+            dimensions: product?.dimensions,
+            warrantyInformation: product?.warrantyInformation,
+            shippingInformation: product?.shippingInformation,
+            availabilityStatus: product?.availabilityStatus
+        },
+        reviews: product?.reviews
+    }
     return (
         <Container>
             <Grid templateColumns={"repeat(12,1fr)"}>
                 <GridItem colSpan={9}>
-                    <PageHeader title={product?.title} brand={product?.brand} rating={product?.rating}/>
+                    <PageHeader title={product?.title} brand={product?.brand} />
                     <p>Ürün Görselleri Carousel Images</p>
-                    <section>
-                        <p>Tablı yapı</p>
-                        <p>1. tabda description olacak</p>
-                        <p>2. tabda ürün özellikleri olacak: marka,kategori, weight, dimensions, shippingInformation,returnPolicy,minimumOrderQuantity</p>
-                        <p>3. tabda reviews</p>
-                    </section>
+                    <ProductDescription productDescription={product_description} />
                 </GridItem>
                 <GridItem colSpan={3}>
                     <p>Fiyat</p>
@@ -33,7 +43,7 @@ const ProductDetailContainer = () => {
                     <p>Stok adedi</p>
                 </GridItem>
             </Grid>
-            
+
         </Container>
     )
 }

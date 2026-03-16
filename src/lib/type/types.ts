@@ -11,25 +11,19 @@ export interface CategoryContextType {
   loading: boolean;
   error: string | null;
 }
-export interface DimensionsType {
-  width: number;
-  height: number;
-  depth: number;
-}
-
-export interface ReviewsType {
-  rating: number;
-  comment: string;
-  date: string;
-  reviewerName: string;
-  reviewerEmail: string;
-}
 export interface MetaType {
   createdAt: string;
   updatedAt: string;
   barcode: string;
   qrCode: string;
 }
+export interface Reviews {
+    rating: number;
+    comment: string;
+    date: string;
+    reviewerName: string;
+    reviewerEmail: string;
+  } 
 export interface ProductType {
   id: number;
   title: string;
@@ -43,11 +37,15 @@ export interface ProductType {
   brand: string;
   sku: string;
   weight: number;
-  dimensions: DimensionsType;
+  dimensions: {
+    width: number;
+    height: number;
+    depth: number;
+  };
   warrantyInformation: string;
   shippingInformation: string;
   availabilityStatus: string;
-  reviews: ReviewsType;
+  reviews: Reviews[];
   returnPolicy: string;
   minimumOrderQuantity: number;
   meta: MetaType;
@@ -58,7 +56,6 @@ export interface ProductType {
 export type CartItem = ProductType & {
   quantity: number;
 };
-
 
 export type CartContextType = {
   items: CartItem[];
