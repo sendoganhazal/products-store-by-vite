@@ -6,6 +6,7 @@ import ViteLogo from "../../assets/vite.svg"
 import { Link } from 'react-router';
 import { useCart } from '../../lib/hooks/useCart';
 import DrawerPortal from './DrawerPortal';
+import CategoriesNav from '../atoms/CategoriesNav'
 
 const HeaderNav = () => {
     const { items } = useCart();
@@ -17,11 +18,12 @@ const HeaderNav = () => {
     return (
         <nav>
             <Container>
-                <Flex gap={"4"} align={"center"} justify={"space-between"}>
+                <Flex flexDirection={{base:"column", md:"row"}} gap={"4"} align={{base:"center", md:"center"}} justify={{base:"center", md:"space-between"}}>
                     <Flex gap={"2"} align={"center"} >
                         <Image alt="Products Store" src={ReactLogo} style={{ display: "block", height: "30px" }} />
                         <Image alt="Products Store" src={ViteLogo} style={{ display: "block", height: "30px" }} />
                         <Link to={"/"}>Products Store</Link>
+                        <CategoriesNav />
                     </Flex>
                     <Flex gap={"2"} align={"center"} justify={"flex-end"}>
                         {/* <LoginMenu /> */}

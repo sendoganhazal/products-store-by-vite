@@ -2,29 +2,18 @@
 import React from 'react'
 import { Link } from "react-router-dom";
 import { useCategories } from "../../lib/hooks/useCategories";
-import { Flex, Container, Box, Button, Menu, Portal } from '@chakra-ui/react'
+import {  Box, Button, Menu, Portal } from '@chakra-ui/react'
 
 
 function CategoriesNav() {
     const { categories, loading } = useCategories();
     if (loading) return null;
     return (
-        <nav>
-            <Container>
-                <Flex gap={"4"} align={"center"} justify={"space-between"}>
-                    {categories.slice(0, 9).map((cat: any) => (
-                          <Box key={cat.slug}>
-                                <Link to={`/products/${cat.slug}`}>
-                                    {cat.name}
-                                </Link>
-                            </Box>
-
-                    ))}
-                    <Box>
+                 <Box>
                         <Menu.Root>
                             <Menu.Trigger asChild>
                                 <Button variant="outline" colorPalette={'purple'}>
-                                    Other Categories
+                                    All Categories
                                 </Button>
                             </Menu.Trigger>
                             <Portal>
@@ -42,10 +31,6 @@ function CategoriesNav() {
                             </Portal>
                         </Menu.Root>
                     </Box>
-                </Flex>
-
-            </Container>
-        </nav>
     );
 }
 
