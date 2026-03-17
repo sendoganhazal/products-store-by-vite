@@ -11,7 +11,7 @@ const CategoryProductsContainer = () => {
     const [products, setProducts] = useState<ProductType[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
     const [sortKey, setSortKey] = useState<SortKey | null>(null);
-
+const [searchQuery, setSearchQuery] = useState<string>("");
     useEffect(() => {
         setLoading(true);
         
@@ -31,19 +31,26 @@ const CategoryProductsContainer = () => {
         fetchData();
     }, [slug]);
 
-    const sortedProducts = useMemo(() => {
-        const items = [...products];
-        switch (sortKey) {
-            case "price":
-                return items.sort((a, b) => a.price - b.price);
-            case "rating":
-                return items.sort((a, b) => b.rating - a.rating);
-            case "title":
-                return items.sort((a, b) => a.title.localeCompare(b.title));
-            default:
-                return items;
+   const filteredAndSortedProducts = useMemo(() => {
+        // 1. Önce Arama Filtresi (Case-insensitive)
+        let result = products.filter((p) =>
+            p.title.toLowerCase().includes(searchQuery.toLowerCase())
+        );
+
+        // 2. Sonra Sıralama
+        if (sortKey) {
+            result = [...result].sort((a, b) => {
+                switch (sortKey) {
+                    case "price": return a.price - b.price;
+                    case "rating": return b.rating - a.rating;
+                    case "title": return a.title.localeCompare(b.title);
+                    default: return 0;
+                }
+            });
         }
-    }, [products, sortKey]);
+
+        return result;
+    }, [products, sortKey, searchQuery]);
 
     if (loading) {
         return (
@@ -55,12 +62,12 @@ const CategoryProductsContainer = () => {
 
     return (
         <Container>
-            <CategoryProductFilters onSort={(key) => setSortKey(key)} />
+            <CategoryProductFilters onSort={(key) => setSortKey(key)} onSearch={(val) => setSearchQuery(val)}/>
             <Grid 
                 templateColumns={{ base: "1fr", md: "repeat(2, 1fr)", lg: "repeat(4, 1fr)" }} 
                 gap={6}
             >
-                {sortedProducts.map((product) => (
+                {filteredAndSortedProducts.map((product) => (
                     <ProductCard key={product.id} product={product} />
                 ))}
             </Grid>
