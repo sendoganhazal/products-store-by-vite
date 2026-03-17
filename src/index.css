@@ -1,4 +1,14 @@
-
+.banner {
+height: 75vh;
+  background-color: #fca5a5;
+}
+.banner .chakra-container,
+.banner .chakra-container div {
+  height: 100%;  
+}
+.banner .chakra-container h2 {
+  text-align: center;
+}
 .description-section {
   margin-top: 1.875rem;
 }
