@@ -12,7 +12,7 @@ interface Props {
 const CategoryProductFilters = ({ onSort, onSearch }: Props) => {
     return (
         <Container>
-            <Flex gap={4} alignItems={"center"} justifyContent={"space-between"} paddingTop={"1.25rem"} paddingBottom={"1.25rem"}>
+            <Flex flexDirection={{base:"column", md:"row"}} gap={4} align={{base:"stretch", md:"center"}} justify={{base:"center", md:"space-between"}}paddingTop={"1.25rem"} paddingBottom={"1.25rem"}>
                 <Box>
                     <InputGroup flex="1" maxW="300px" startElement={<LuSearch />}>
                         <Input
@@ -22,10 +22,10 @@ const CategoryProductFilters = ({ onSort, onSearch }: Props) => {
                         />
                     </InputGroup>
                 </Box>
-                <Flex gap={2} alignItems={"center"}>
-                    <Button onClick={() => onSort("rating")} variant={"solid"} colorPalette={"pink"}>Sort by Rating</Button>
-                    <Button onClick={() => onSort("title")} variant={"solid"} colorPalette={"purple"}>Sort by Title</Button>
-                    <Button onClick={() => onSort("price")} variant={"solid"} colorPalette={"cyan"}>Sort by Price</Button>
+                <Flex flexWrap={"wrap"} gap={2} alignItems={"center"} >
+                    <Button onClick={() => onSort("rating")} variant={"solid"} colorPalette={"pink"} flexBasis={{base:"45%", md:"auto"}}>Sort by Rating</Button>
+                    <Button onClick={() => onSort("title")} variant={"solid"} colorPalette={"purple"} flexBasis={{base:"45%", md:"auto"}}>Sort by Title</Button>
+                    <Button onClick={() => onSort("price")} variant={"solid"} colorPalette={"cyan"} flexBasis={{base:"45%", md:"auto"}}>Sort by Price</Button>
 
                 </Flex>
             </Flex>

@@ -25,7 +25,7 @@ const HeaderNav = () => {
                         <Link to={"/"}>Products Store</Link>
                         <CategoriesNav />
                     </Flex>
-                    <Flex gap={"2"} align={"center"} justify={"flex-end"}>
+                    <Flex gap={"2"} align={"center"} justify={{base:"stretch", md:"flex-end"}}>
                         {/* <LoginMenu /> */}
                         <Drawer.Root size={"xl"}>
                             <CartButton totalItems={totalItems} />
