@@ -34,13 +34,13 @@ const ProductDetailContainer = () => {
     const { addToCart } = useCart();
     return (
         <Container marginTop={"1.5rem"}>
-            <Grid templateColumns={"repeat(12,1fr)"} gap={5}>
-                <GridItem colSpan={9}>
+            <Grid templateColumns={{ base: "1fr", md: "repeat(6, 1fr)", lg: "repeat(12, 1fr)" }} gap={5}>
+                <GridItem colSpan={{ base: 1, md: 3, lg: 9 }}>
                     <PageHeader title={product?.title} brand={product?.brand} />
                     <ProductImages product_images={product?.images}/>
                     <ProductDescription productDescription={product_description} />
                 </GridItem>
-                <GridItem colSpan={3}>
+                <GridItem colSpan={{ base: 1, md: 3, lg: 3 }}>
                      <Button
                         variant="solid"
                         colorPalette={"teal"}
