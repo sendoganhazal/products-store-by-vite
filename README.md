@@ -2,7 +2,7 @@
 
 A simple e-commerce frontend built with **Vite & React**, using the Dummy JSON.  
 The project focuses on product listing, filtering,  and a basic cart system.
-https://fake-store-app-by-hazal.netlify.app/
+[https://fake-store-app-by-hazal.netlify.app/](https://product-store-by-vite.netlify.app/)
 ---
 
 ## ✨ Features
