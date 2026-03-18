@@ -1,12 +1,19 @@
 .banner {
-height: 75vh;
-  background-color: #fca5a5;
+  height: 80vh;
+  background-image: url("./assets/catty.jpg");
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
 }
-.banner .chakra-container,
-.banner .chakra-container div {
+.footer {
+  height: 100px;
+  background-color: var(--chakra-colors-blue-50);
+}
+.footer .chakra-container,
+.footer .chakra-container div {
   height: 100%;  
 }
-.banner .chakra-container h2 {
+.footer .chakra-container h2 {
   text-align: center;
 }
 .description-section {
@@ -21,4 +28,12 @@ height: 75vh;
 .description-section div[data-part="content"] {
   height: 500px;
   overflow: auto;
+}
+
+@media (max-width: 767.98px) {
+  .footer {
+    height: auto;
+    padding: 1.875rem 0;
+    text-align: center;
+  }
 }

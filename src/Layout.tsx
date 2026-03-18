@@ -2,6 +2,7 @@ import { Outlet } from "react-router-dom";
 import Header from "./components/organisms/Header";
 import { CartProvider } from "./lib/context/CartContext";
 import "./index.css"
+import Footer from "./components/organisms/Footer";
 
 const Layout = () => {
   return (
@@ -12,7 +13,7 @@ const Layout = () => {
         <Outlet />
       </main>
 
-      <footer>© 2026</footer>
+      <Footer/>
     </CartProvider>
   );
 };
