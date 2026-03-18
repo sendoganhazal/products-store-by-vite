@@ -1,3 +1,6 @@
+main {
+  padding-bottom: 2rem;
+}
 .banner {
   height: 80vh;
   background-image: url("./assets/catty.jpg");
@@ -6,12 +9,12 @@
   background-repeat: no-repeat;
 }
 .footer {
-  height: 100px;
+  height: 20vh;
   background-color: var(--chakra-colors-blue-50);
 }
 .footer .chakra-container,
 .footer .chakra-container div {
-  height: 100%;  
+  height: 100%;
 }
 .footer .chakra-container h2 {
   text-align: center;

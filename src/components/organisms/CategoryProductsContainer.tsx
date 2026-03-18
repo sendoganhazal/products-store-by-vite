@@ -2,7 +2,7 @@ import { useEffect, useState, useMemo } from "react";
 import { useParams } from "react-router-dom";
 import { Grid, Spinner, Center, Container } from "@chakra-ui/react";
 import CategoryProductFilters  from "../molecules/CategoryProductFilters";
-import type { SortKey } from "../molecules/CategoryProductFilters";
+import type { SortOption } from "../molecules/CategoryProductFilters";
 import ProductCard from "../atoms/ProductCard"; // Component ismin farklıysa güncelle
 import type { ProductType } from "../../lib/type/types";
 
@@ -10,7 +10,7 @@ const CategoryProductsContainer = () => {
     const { slug } = useParams();
     const [products, setProducts] = useState<ProductType[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
-    const [sortKey, setSortKey] = useState<SortKey | null>(null);
+    const [sortKey, setSortKey] = useState<SortOption | null>(null);
 const [searchQuery, setSearchQuery] = useState<string>("");
     useEffect(() => {
         setLoading(true);
@@ -41,9 +41,11 @@ const [searchQuery, setSearchQuery] = useState<string>("");
         if (sortKey) {
             result = [...result].sort((a, b) => {
                 switch (sortKey) {
-                    case "price": return a.price - b.price;
-                    case "rating": return b.rating - a.rating;
-                    case "title": return a.title.localeCompare(b.title);
+case "price-asc": return a.price - b.price;
+case "price-desc": return b.price - a.price;
+case "rating-desc": return b.rating - a.rating;
+case "title-asc": return a.title.localeCompare(b.title);
+case "title-desc": return b.title.localeCompare(a.title);
                     default: return 0;
                 }
             });

@@ -2,7 +2,7 @@ import { Flex, Box, Container, Input, InputGroup, Portal, createListCollection, 
 import { LuSearch } from "react-icons/lu";
 
 // Sıralama kriterleri için tip tanımlayalım
-export type SortOption = "price-asc" | "price-desc" | "rating-desc" | "title-asc" | "title-desc";
+export type SortOption = "default" | "price-asc" | "price-desc" | "rating-desc" | "title-asc" | "title-desc";
 
 interface Props {
     onSort: (value: SortOption) => void;
@@ -12,6 +12,7 @@ interface Props {
 const CategoryProductFilters = ({ onSort, onSearch }: Props) => {
     const sortOptions = createListCollection({
         items: [
+            { label: "Default", value: "default" },
             { label: "Price: Low to High", value: "price-asc" },
             { label: "Price: High to Low", value: "price-desc" },
             { label: "Highest Rated", value: "rating-desc" },
