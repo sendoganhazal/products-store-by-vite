@@ -1,73 +1,97 @@
-# React + TypeScript + Vite
+# Product Store App 🛒
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple e-commerce frontend built with **Vite & React**, using the Dummy JSON.  
+The project focuses on product listing, filtering,  and a basic cart system.
+https://fake-store-app-by-hazal.netlify.app/
+---
 
-Currently, two official plugins are available:
+## ✨ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**1. Architecture & Core Technologies**
+**Modern Tech Stack:** Built with React 18 and Vite for lightning-fast development and optimized production builds.
 
-## React Compiler
+**Type-Safe Development:** Leveraging TypeScript throughout the project to ensure robust code, prevent runtime errors, and provide excellent IDE support.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+**Atomic Design Pattern:** Organized into Atoms, Molecules, and Organisms, making the UI components highly reusable and the codebase easy to navigate.
 
-## Expanding the ESLint configuration
+**2. Product Exploration & Discovery**
+**Dynamic Category Routing:** Implements a seamless navigation system using react-router-dom that fetches and displays products based on specific categories (e.g., beauty, laptops, fragrances).
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+**Deep Product Details:** A dedicated Product Detail Page featuring image galleries, detailed specifications (brand, dimensions, warranty), and customer reviews.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+**Real-time Search & Filter:** A global search functionality that allows users to find products instantly as they type, integrated directly with the UI state.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+**Advanced Sorting Engine:** A professional-grade sorting system using Chakra UI Select components, offering:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+**Price:** Ascending & Descending.
+
+**Ratings:** Sorting by customer satisfaction.
+
+**Alphabetical:** A-Z and Z-A ordering.
+
+**Default State:** Capability to reset to the original API sequence.
+
+**3. Shopping Experience**
+**Global Cart Management:** A centralized Cart System powered by custom hooks (useCart), allowing users to add products from both the listing and detail pages.
+
+**Inventory Awareness:** Real-time display of stock status, SKU information, and minimum order quantities.
+
+**Dynamic Pricing:** Automatic calculation of discounts and final prices, providing clear value propositions to the user.
+
+**4. UI/UX & Design Excellence**
+**Fully Responsive Layout:** Optimized for all screen sizes (Mobile, Tablet, Desktop) using Chakra UI’s Responsive Grid system (base, md, lg breakpoints).
+
+**Modern Component Library:** Styled with Chakra UI (v3), ensuring a consistent, accessible, and high-performance design language.
+
+**Performance Optimization:** Strategic use of useMemo and useEffect to handle heavy data operations (like sorting/filtering) without compromising UI fluidity.
+
+**5. Data & API Integration**
+**Live Data Source:** Integrated with the DummyJSON API, simulating a real-world e-commerce backend with high-quality product metadata.
+
+Smart Loading States: Smooth transitions with loading spinners and skeleton-like behavior to keep the user engaged during data fetching.
+---
+
+## 🛠 Tech Stack
+
+- **Vite**
+- **React**
+- **TypeScript**
+- **Chakra UI**
+- **Context API** (Cart & UI state)
+- **Dummy Json API**
+
+---
+
+
+## 🚀 Getting Started
+
+### 1️⃣ Install dependencies
+
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 2️⃣ Run development server
+npm run dev
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+The app will be available at:
+
+http://localhost:3000
+
+---
+
+
+## ⚠️ Notes
+
+- This project is for learning and demonstration purposes
+
+- Fake Store API is a public API and may have availability limitations
+
+- No authentication or payment functionality is included
+
+---
+
+## 📄 License
+
+- This project is open-source and free to use for educational purposes.
