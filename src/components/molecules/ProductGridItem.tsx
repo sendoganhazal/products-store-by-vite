@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { Grid, GridItem } from "@chakra-ui/react"
+import { GridItem } from "@chakra-ui/react"
 import type { ProductType } from "../../lib/type/types"
 import ProductCard from "../atoms/ProductCard"
 interface ProductProps {
