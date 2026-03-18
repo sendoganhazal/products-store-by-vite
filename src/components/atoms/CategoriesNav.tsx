@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React from 'react'
 import { Link } from "react-router-dom";
 import { useCategories } from "../../lib/hooks/useCategories";
 import {  Box, Button, Menu, Portal } from '@chakra-ui/react'

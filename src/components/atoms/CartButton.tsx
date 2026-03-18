@@ -1,4 +1,3 @@
-import React from 'react'
 import { Button, Badge, Drawer } from '@chakra-ui/react'
 import { IoCartOutline } from "react-icons/io5";
 

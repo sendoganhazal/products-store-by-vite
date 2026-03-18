@@ -1,6 +1,4 @@
-import React from 'react'
 import HeaderNav from '../molecules/HeaderNav'
-
 import { Box } from '@chakra-ui/react'
 
 const Header = () => {
